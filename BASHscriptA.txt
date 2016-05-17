@@ -1,0 +1,13 @@
+#!/bin/bash
+$ ./script.sh /home/ma/j/lindenea/ClassInfo /home/ma/j/lindenea/ClassInfo  
+
+cd $1
+echo "Assignment #2-1, Ahmad Elhamad, masc1376"
+
+name=`grep "100" Grades` # extracts Smartys name from 'Grades' file
+user=`grep "Smarty" Logins`   # extracts username
+pass=`grep "Smarty" Logins`   # extracts password
+
+echo $name | cut -d "," -f 1-2 # edits variable so only full name appears and outputs
+echo $user | cut -d "," -f2    # edits so only user name appears & outputs to screen
+echo $pass | cut -d "," -f3    # edits so only password appears and outputs to screen

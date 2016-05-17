@@ -1,0 +1,37 @@
+#!/bin/bash
+
+$ ./script2.sh /home/ma/237.01/masc1434 # script2.sh takes Smartys directory as only arg
+echo "Assignment 2-2, Ahmad Elhamad, masc1376"
+
+cd $1
+
+#cp /home/ma/237.01/masc1434/uKGr/z54Vi /home/ma/237.01/masc1376/z54Vi.c
+#cp /home/ma/237.01/masc1434/bjsj/Tp30k /home/ma/237.01/masc1376/Tp30k.c
+#cp /home/ma/237.01/masc1434/NXWa/dc1z/bd3RL /home/ma/237.01/masc1376/bd3RL.c
+#cp /home/ma/237.01/masc1434/1bgC/1R2p/C88ob /home/ma/237.01/masc1376/C88ob.c
+
+file1="z54Vi.c"
+cd uKGr   	# navigate to directory
+cp z54Vi /home/ma/237.01/masc1376/z54Vi.c # steal file to my home directory
+echo $file1    # output name
+
+file2="Tp3Ok.c"
+cd ..   # goes back to parent directory
+cd bjsj
+cp Tp3Ok /home/ma/237.01/masc1376/Tp3Ok.c # steals file to my home directory
+echo $file2 # outputs name to screen
+
+file3="bd3RL.c"
+cd ..
+cd NXWa
+cd dc1z   # navigates into new directory
+cp bd3RL /home/ma/237.01/masc1376/bd3RL.c # steals file into my directory
+echo $file3 # outputs file name
+
+file4="C88ob.c"
+cd ..
+cd ..
+cd 1bgC
+cd 1R2p   # navigate into final directory
+cp C88ob /home/ma/237.01/masc1376/C88ob.c  # steals last file into my home directory
+echo $file4  # output final name
