@@ -1,9 +1,5 @@
 package data_structures;
-
 import java.util.Iterator;
-
-
-
 
 public class CryptHash<K,V> implements HashI<K,V>
 {
