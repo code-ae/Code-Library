@@ -1,18 +1,18 @@
 class Token:
 	
-	def __init__(self,strtoken)
-		self.strtoken=strtoken
-		self.type='unknown'
+	def __init__(self,strtoken)     #constructor
+		self.strtoken=strtoken  #property initialization
+		self.type='unknown'     #sets variables to default values
 		
-	def GetStringValue(self):
+	def GetStringValue(self):       #getter method
 		return self.strtoken
 	
-	def GetElementType(self):
+	def GetElementType(self): 
 		return self.type
 
 class LiteralIntToken(Token):
 	typename='Literal Int'
-		def __init__(self,strtoken)
+		def __init__(self,strtoken)		#constructor
 			Token.__init__(self,strtoken)
 			self.type=typename
 			self.strtoken=strtoken
@@ -25,7 +25,7 @@ class LiteralIntToken(Token):
 		
 class NameToken(Token):
 	typename='Name'
-	def __init__(self,strtoken):
+	def __init__(self,strtoken):   #constructor
 		Token.__init__(self,strtoken)	
 		self.type=typename
 		self.strtoken=strtoken
