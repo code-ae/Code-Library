@@ -52,41 +52,89 @@ void sighandler()
 void pipe_it(){	//based off pipe.c in course reader
 
 
-	#include <stdio.h>
-	#include <unistd.h>
-	#include <fcntl.h>
-	#include <sys/types.h>
-	#include <sys/stat.h>
+    int p[2]; // pipe used for redirection
+    int pid; // process id number
 
-	int   p[2];
-	int pid;
-	int r;
-
+    int x=0;
 
     char *firstcommand = argv_copy;
-    char *piped_cmd = {"grep", "pipe", NULL};
+    char *piped_cmd = argv_copy[pipe_indx[x]]; //first piped command (if applicable)
+    x++;	//for check if single pipe or multiple pipe
+    pipe(p);	//create the pipe
 
-    pipe(p);
-
-    pid = fork();
-    if (pid  != 0) {
+    pid = fork(); // and a new child process
+    if (pid > 0) {
             // Parent: Output is to child via pipe[1]
 
             // Change stdout to pipe[1]
             dup2(p[1], 1);
             close(p[0]);
-
-            r = execvp("ls", ls_args);
-    } else {
+ 	    int result;
+            if( result = execvp(*argv_copy, argv_copy) < 0 ){
+	    	printf(" %s: Command failed/n");
+	    }
+    } 
+    else if( pid < 0 ){
+    	    fprintf(stderr,"Fork failed)";
+	    //Error Handling
+    else {
             // Child: Input is from pipe[0] and output is via stdout.
             dup2(p[0], 0);
             close(p[1]);
-
-            r = execvp("grep", grep_args);
-            close(p[0]);
+     	    
+	    if( result = execvp(*argv_copy, argv_copy) < 0 ){
+	    	printf(" %s: Command failed/n");
+	     }
+             close(p[0]);
     }
+    if(pipe_indx[x] != NULL) {
+    	  	int w[2]; // pipe used for redirection
+     		int pid2; // process id number
+
+    		int x=0;
+
+    		char *firstcommand = argv_copy;
+   		char *piped_cmd = argv_copy[pipe_indx[x]]; //first piped command (if applicable)
+    		x++;					//for check if single pipe or multiple pipe
+    
+    		pipe(w);	//create the pipe
+
+    		pid2 = fork(); // and a new child process
+    		if (pid2 > 0) {
+    	       			 // Parent: Output is to child via pipe[1]
+        	         	 // Change stdout to pipe[1]
+         	   	dup2(w[1], 1);
+         	   	close(w[0]);
+ 	  	  	int result;
+          	  	if( result = execvp(*argv_copy, argv_copy) < 0 ){
+	   	 		printf(" %s: Command failed/n");
+	 	   	}
+	  	  } 
+    		else if( pid2 < 0 ){
+    		    	fprintf(stderr,"Fork failed)";
+		    	//Error Handling
+		}
+    		else {
+        		    // Child: Input is from pipe[0] and output is via stdout.
+        		    dup2(w[0], 0);
+        		    close(w[1]);
+     	    
+			    if( result = execvp(*argv_copy, argv_copy) < 0 ){
+			    	printf(" %s: Command failed/n");
+			     }
+        		     close(w[0]);
+   		 	}
 
 
+	
+		for(;;)  // wait code........*/
+	 	{	pid_t pid;
+			CHK( pid = wait(NULL) );
+			if (pid == file_two) {
+				break;
+	  		 }
+		}
+	}
 
 	for(;;)  // wait code........*/
  	{	pid_t pid;
