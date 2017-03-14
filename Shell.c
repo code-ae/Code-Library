@@ -229,7 +229,6 @@ int main()
  
 	int argcount=0; 	// counts how many arguments given to line
 				//always at least 1 argument, otherwise special
-				//case
 	for(;;) {
 		
 		fflush(stderr); //clean out buffers for children
@@ -239,19 +238,14 @@ int main()
 		ampFLAG = leftFLAG = rightFLAG = pipeFLAG = 0;
 		int mark=0;
 		
-		printf("p2: ");//issue prompt
-		
+		printf("p2: ");     //issue prompt
+		argcount = parse(); //parse command, store arg count value
 
-		//call parse function
-		argcount = parse();
-
-		if(pipeFLAG >0){
+		if(pipeFLAG >0) {
 			int loc = pipe_indx[mark++]; //save piped cmd index to loc
 			piped_cmd = argv_copy[loc] //transfer contents of piped command to pipedcmd
-		
-			
-		
-		if(leftFLAG > 0){	//extract input file name from args and store in infile
+		}		
+		if(leftFLAG > 0) {	//extract input file name from args and store in infile
 			infile = argv_copy[infl_index];
 		}
 		if(rightFLAG > 0) { //extract output file name from argv_copy and store in outfile
@@ -259,26 +253,21 @@ int main()
 		}
 
 		int g=0;
-		
 		while(argv_copy[g] != NULL) {
 			pipe_one[g] = argv_copy[g]  ;
 			g++;
 		}
 		g++;
-		while(argv_copy[g] != NULL) {
+		while(argv_copy[g] != NULL){
 			pipe_two[g] = argv_copy[g];
 			g++;
 		}
-		
-		
+	
 		if(argcount == amper_index){
 			ampFLAG=1;
 		}
-		
-			
 		int i;
-		if(ampersand_seen == 1)
-		{
+		if(ampersand_seen == 1){
 			for(i = 0; i < argcount; i++)
 			{	argument[i] = argv_copy[i];
 				if( (argument[i] == '&') && argv_copy[i+1] == NULL){
@@ -289,12 +278,10 @@ int main()
 		}	
 		if(argcount == -1) { //if first word == EOF , break
 			break;
-		}
-							
+		}				
 		if(argv_copy[0] == NULL && argcount == 0){
 			continue; // if line is empty, 
 		}
-		
 		
 		//handle builtin commands and continue, OR
 		// if there is a command on line, begin processing them
@@ -334,7 +321,6 @@ int main()
 				}								//store location of filename
 			}
 		}
-		
 		if(rightFLAG == 1)
 		{
 			if(outfile == '\0')
@@ -346,11 +332,7 @@ int main()
 				{	fprintf(stderr,"Error with output file. \n");	
 					continue;
 				}
-			}
-		
-
-			
-			
+			}			
 		}
 
 		fflush(stdout);
@@ -360,7 +342,6 @@ int main()
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /*////////*/ch_pid = fork();/////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
 		if(ch_pid < 0) // if the process could not be created
 		{	printf("Cannot Fork!");
 			exit(-1);
@@ -403,22 +384,17 @@ int main()
 			if(pipeFLAG==1)
 			{	pipe_it();
 			}
-			
-		
-			
+					
 			//////EXECVP////
 			int exec_result= execvp(*argv_copy, argv_copy); // first argument specifes file (first element in list) to execute
 			if(exec_result == -1)				//second provides entire list of arguments
 			{					// execvp returns -1 only if an error occurs
 				printf("%s: Command not found.\n",argv_copy[0]); //now that proper redirection has been set up
 				exit(9);				// execute the process
-			}
-			
+			}	
 		}
-		else
-		{	
-			
-			if(ampFLAG >0) {
+		  else {
+				if(ampFLAG >0) {
 				printf("%s [%d] \n",argv_copy[0],ch_pid); //print the childs pid(in this case, child should redirect stdin to /dev/null
 				ampFLAG=0;
 				continue;
