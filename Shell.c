@@ -125,8 +125,6 @@ void pipe_it(){	//based off pipe.c in course reader
         		     close(w[0]);
    		 	}
 
-
-	
 		for(;;)  // wait code........*/
 	 	{	pid_t pid;
 			CHK( pid = wait(NULL) );
