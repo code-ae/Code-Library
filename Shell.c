@@ -49,6 +49,9 @@ void sighandler()
 
 }
 
+
+
+	
 void pipe_it(){	//based off pipe.c in course reader
 
 
@@ -305,22 +308,7 @@ int main()
 		//setup redirection (w/ background children having 
 		//their stdin redirected to /dev/null
 		
-		if( (strcmp(argv_copy[0] , "show") == 0))
-		{ 
-			if ( (strcmp(argv_copy[1], "friends") == 0) {
-				String[] friends = new String[10]
-				friends = {"l33tboi" , "Trumpindeeznuts", "Obamaplz" , "coolkidrpg"  , "all4harambe69" , "cheripy" , }
-				for(int i =0; i < friends.length; i++)
-				{	
-					System.out.println(friends[i]);
-				}
-			
-			
-			if ( (strcmp(argv_copy[1], "inventory") == 0) {
-				String[] inventory = new String[10];
-				inventory = 
-			}
-		}
+		
 		if(leftFLAG ==1)
 		{
 			if(infile == '\0'){
