@@ -1,8 +1,8 @@
 print( "Ahmad Elhamad, Assignment 5-2, masc1376")
 
-F="Fizz"	//solution to class interview question
+F="Fizz"	//solution to classic "FizzBuzz" interview question
 B="Buzz"	// in Lua script
-FB="FizzBuzz"
+FB="FizzBuzz"	// which prints out iterations of FizzBuzz every 5 prints
 
 for i = 1,100
 do
