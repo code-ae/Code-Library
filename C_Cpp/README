@@ -1,1 +1,14 @@
+*******************
+*** macroPP.cpp ***
+*******************
+A macro preprocessor written as part of a group project in the SDSU Systems Programming course.
+This course required us to code a Compiler for the SIC-XE machine low-level programming language.
+This program parses a source code file and performs static linking functions to provide external library support
+to any source code that is provided as input..
 
+********************
+*** Shell_UNIX.c ***
+********************
+A UNIX-based operating system written in C that runs identical to the typical terminal.
+Multi-functional shell including built-in commands, enviroment variables, input/output redirection,
+and command pipelining. Creates and destroys processes as required. Implements paralell programming techniques.
