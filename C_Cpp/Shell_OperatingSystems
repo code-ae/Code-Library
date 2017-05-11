@@ -1,21 +1,6 @@
 /*  
 Copyright © 2016 Ahmad Elhamad
-So copy my homework...
-and make me rich! #USA
 */
-   
-#include <stdio.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <signal.h>
-#include <string.h>
-#include <CHK.h>
-#include <sys/types.h>
-
 
 #define STORAGE 99990
 
