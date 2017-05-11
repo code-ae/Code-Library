@@ -1,0 +1,5 @@
+*******************
+** Tokenizer*.py **
+*******************
+A collection of python files that takes a file as input and parses the contained words,
+seperating the words into categorical groups. Emulates functionality of a language tokenizer.
