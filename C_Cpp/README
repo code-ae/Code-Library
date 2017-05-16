@@ -3,7 +3,7 @@ Both of these projects, one group and one solo, were completed together in the s
 *******************
 *** macroPP.cpp ***
 *******************
-A macro preprocessor written as part of a group project in the SDSU Systems Programming course.
+A macro preprocessor written, in C++,  as part of a group project in the SDSU Systems Programming course.
 This course required us to code a Compiler for the low-level SIC-XE machine programming language.
 This program parses a source code file and performs static linking functions to provide external library support
 to any source code that is provided as input..
@@ -43,5 +43,18 @@ external libraries        into machine code
 A UNIX-based operating system written in C that runs identical to the typical terminal.
 Multi-functional shell including built-in commands, enviroment variables, input/output redirection,
 and command pipelining. Creates and destroys processes as required. Implements paralell programming techniques.
+
+1 - I first constructed a getword() function, which implemented getchar(), to organize & process any commands.
+
+2 - Next, a parse() function was created implementing my getword(), which performed command/parameter specification 
+    and set appropriate flags for things including redirection, pipes, or escapes (/).
+
+3 - Next, built-in commands were coded, for events that didnt require a new process to be forked, including 'cd' and 'echo'.
+
+4 - For all other commands, a new process is forked for the program specified by the 0th element in the argv_array.
+    Its corresponding arguments follow.
+
+5 - In the event that the pipe-flag is set, another process is forked as well, with its input and output redirected as specified.
+
 
 *******************
