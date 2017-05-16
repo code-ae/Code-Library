@@ -30,9 +30,9 @@ to any source code that is provided as input..
     With a complete macro assembled, we replace the macro name with its body.
    
       Input       ->         Output
- Source Code            Complete program, 
- w/ links to            ready to be converted
-external libraries      into machine code
+   Source Code            Complete program, 
+   w/ links to            ready to be converted
+external libraries        into machine code
      
 
 
