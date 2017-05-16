@@ -2,8 +2,9 @@ print( "Ahmad Elhamad, Assignment 5-2, masc1376")
 
 F="Fizz"	//solution to classic "FizzBuzz" interview question
 B="Buzz"	// in Lua script
-FB="FizzBuzz"	// which prints out iterations of FizzBuzz every 5 prints
-
+FB="FizzBuzz"	// which prints out iterations of FizzBuzz every 15 loops
+		// Fizz every 3 loops
+		// & Buzz every 5 loops
 for i = 1,100
 do
 
