@@ -208,7 +208,8 @@ int main()
 	int out_desc;       //file descriptor for output
 	char *argument[STORAGE];	//holds value for argument check *//
 	
-	signal(SIGTERM,sighandler);
+	signal(SIGTERM,sighandler); // interrupt service routine
+				// for handling SIGTERM signal
 	
 	pid_t pid;		 // holds process's ID val in special format
 	pid_t ch_pid;		// holds processes pchild's ID val
