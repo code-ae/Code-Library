@@ -2,8 +2,9 @@
 Copyright © 2016 Ahmad Elhamad
 */
 
-#define STORAGE 99990
+#define STORAGE 9999 //STATIC macro variable
 
+//GLOBAL VARIABLES
 char c[STORAGE]; /* holds arguments , c[0] is command name */
 
 char *argv_copy[STORAGE]; // holds arguments
@@ -31,12 +32,9 @@ int pipe_indx[20];
 int ampersand_seen=0;
 
 void sighandler()
-{
-
-}
+{}
 	
 void pipe_it(){	//based off pipe.c in course reader
-
 
     int p[2]; // pipe used for redirection
     int pid; // process id number
@@ -119,7 +117,7 @@ void pipe_it(){	//based off pipe.c in course reader
 	  		 }
 		}
 	}
-
+				
 	for(;;)  // wait code........*/
  	{	pid_t pid;
 		CHK( pid = wait(NULL) );
@@ -127,7 +125,6 @@ void pipe_it(){	//based off pipe.c in course reader
 			break;
 	  	}
 	}
-
 exit(EXIT_SUCCESS);
 }
 
