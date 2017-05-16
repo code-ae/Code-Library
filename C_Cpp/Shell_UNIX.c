@@ -29,13 +29,11 @@ int flags_in = O_RDONLY;
 int pipeLocation= 0;
 int pipe_indx[20];
 int ampersand_seen=0;
+
 void sighandler()
 {
 
 }
-
-
-
 	
 void pipe_it(){	//based off pipe.c in course reader
 
@@ -127,12 +125,11 @@ void pipe_it(){	//based off pipe.c in course reader
 		CHK( pid = wait(NULL) );
 		if (pid == file_two) {
 			break;
-	  	 }
+	  	}
 	}
 
 exit(EXIT_SUCCESS);
 }
-
 
 int parse() { // parses a command line, each argument in seperate slot
 	
@@ -398,7 +395,7 @@ int main()
 	}
 	
 	killpg( getpid(), SIGTERM ); // Terminate any children still running 
-								//BAD ARGS TO KILLPG CAN CRASH AUTOGRADER
+				    // sends SIGTERM to process pid
 	printf("p2 terminated. \n");
 	exit(0);
 }
