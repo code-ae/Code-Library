@@ -18,7 +18,7 @@ to any source code that is provided as input..
     
 3 - With our macro structure and source code file, we were ready to pair the macro names with their associated bodys.
     To be able to seperate between the name and body, we nested a Vector of Vectors, with the 1st dimension containing the name,
-     & the 2nd containing the body.
+    & the 2nd containing the body.
      
 4 - These two dimensional vectors were then stored in a Map structure, which allowed for quick lookups and  
     replacements in the compiler. This was the final organizational step that needed to take place
