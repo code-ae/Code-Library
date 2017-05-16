@@ -1,10 +1,41 @@
+Both of these projects, one group and one solo, were completed together in the span of three months.
+
 *******************
 *** macroPP.cpp ***
 *******************
 A macro preprocessor written as part of a group project in the SDSU Systems Programming course.
-This course required us to code a Compiler for the SIC-XE machine low-level programming language.
+This course required us to code a Compiler for the low-level SIC-XE machine programming language.
 This program parses a source code file and performs static linking functions to provide external library support
 to any source code that is provided as input..
+
+1 - First part of this project consisted of writing code to parse a source code file by line,
+    seperating each indiv. unit into tokens. Each macro consists of a name token and a number of body tokens following.
+    
+2 - The second part of this project consisted of taking the macro name tokens and storing them in an array.
+    As we progressed, we realized that an array could not provide the dynamic memory allocation features
+    that we needed to store macros of varied sizes, and so we adjusted our algorithm to store our data in a
+    Vector. We eliminated unneccessary memory usage while implementing new methods in our structure.
+    
+3 - With our macro structure and source code file, we were ready to pair the macro names with their associated bodys.
+    To be able to seperate between the name and body, we nested a Vector of Vectors, with the 1st dimension containing the name,
+     & the 2nd containing the body.
+     
+4 - These two dimensional vectors were then stored in a Map structure, which allowed for quick lookups and  
+    replacements in the compiler. This was the final organizational step that needed to take place
+    before macro expansion could perform consistently.
+    
+5 - The final step for our macro preprocessor involved going through the source code file,
+    looking for macros to be expanded. The algorithm checks the map for every token to see if the  current token requires expansion.
+    If so, it takes any applicable parameters and inserts them into their appropriate spots in the macro.
+    With a complete macro assembled, we replace the macro name with its body.
+   
+      Input       ->         Output
+ Source Code            Complete program, 
+ w/ links to            ready to be converted
+external libraries      into machine code
+     
+
+
 
 ********************
 *** Shell_UNIX.c ***
@@ -12,3 +43,5 @@ to any source code that is provided as input..
 A UNIX-based operating system written in C that runs identical to the typical terminal.
 Multi-functional shell including built-in commands, enviroment variables, input/output redirection,
 and command pipelining. Creates and destroys processes as required. Implements paralell programming techniques.
+
+*******************
