@@ -6,23 +6,6 @@
  * 10/30/2016
  */
 
-
-  * <YOUR NAME HERE>
-  * Program 3
-  * CS570
-  * <INSTRUCTOR NAME HERE>
-  * SDSU
-  * <DATE HERE>
-  *
-  * This is the only file you may change. (In fact, the other files should
-  * be symbolic links to:
-  *   ~cs570/Three/p3main.c
-  *   ~cs570/Three/p3.h
-  *   ~cs570/Three/Makefile
-  *   ~cs570/Three/CHK.h    )
-  *
-  */
-
  static sem_t court;      /*the court segregator, making sure only one group uses court at a time */
  static sem_t mutex;    /* the enforcer, ensures only process manipulates count at a time */
  int shooter_count;     /*shooters can be considered analogy for number-cruncher processes*/
