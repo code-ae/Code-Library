@@ -10,7 +10,7 @@ int2primefactor.s
 * 	Input is only digits 0-9
 * 	Value is in range of 2-65535
 * 	Answer to last question is 'YyNn'
-*  Answer to last question is 1 character
+* Answer to last question is 1 character
 * Included files: N/A
 * Method and/or pseudocode:
 *       Check Size of Input between 0-5
