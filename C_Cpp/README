@@ -16,8 +16,8 @@ to any source code that is provided as input..
     that we needed to store macros of varied sizes, and so we adjusted our algorithm to store our data in a
     Vector. We eliminated unneccessary memory usage while implementing new methods in our structure.
     
-3 - With our macro structure and source code file, we were ready to pair the macro names with their associated bodys.
-    To be able to seperate between the name and body, we nested a Vector of Vectors, with the 1st dimension containing the name,
+3 - With our macro structure and source code file, we were ready to pair the macro names with their      associated bodys.
+    To be able to seperate between the name and body, we nested a Vector of Vectors, with the 1st dimension      containing the name,
     & the 2nd containing the body.
      
 4 - These two dimensional vectors were then stored in a Map structure, which allowed for quick lookups and  
@@ -25,7 +25,7 @@ to any source code that is provided as input..
     before macro expansion could perform consistently.
     
 5 - The final step for our macro preprocessor involved going through the source code file,
-    looking for macros to be expanded. The algorithm checks the map for every token to see if the  current token requires expansion.
+    looking for macros to be expanded. The algorithm checks the map for every token to see if the  current      token requires expansion.
     If so, it takes any applicable parameters and inserts them into their appropriate spots in the macro.
     With a complete macro assembled, we replace the macro name with its body.
    
