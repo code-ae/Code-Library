@@ -4,3 +4,6 @@
 A collection of python files that takes a file as input and parses the contained words,
 seperating the words into categorical groups. Emulates functionality of a language tokenizer.
 Implements object-oriented features and procedural programming methods.
+
+udpclient/udpserver.py
+Implementation of UDP client/server connection.
