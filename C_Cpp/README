@@ -1,7 +1,7 @@
 Both of these projects, one group and one solo, were completed together in the span of three months.
 
 *******************
-*** macroPP.cpp ***
+*** macroPP.cpp *** parse, store, tokenize, expansion
 *******************
 A macro preprocessor written, in C++,  as part of a group project in the SDSU Systems Programming course.
 This course required us to code a Compiler for the low-level SIC-XE machine programming language.
@@ -38,7 +38,7 @@ external libraries        into machine code
 
 
 ********************
-*** Shell_UNIX.c ***
+*** Shell_UNIX.c *** getword(), parse(), flags, I/O, piping
 ********************
 A UNIX-based operating system written in C that runs identical to the typical terminal.
 Multi-functional shell including built-in commands, enviroment variables, input/output redirection,
