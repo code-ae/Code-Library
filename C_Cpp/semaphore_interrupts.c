@@ -1,10 +1,4 @@
- * Ahmad Elhamad
- * Program 3
- * CS570 Operating Systems
- * Professor John Carroll
- * SDSU
- * 10/30/2016
- */
+
 
  static sem_t court;      /*the court segregator, making sure only one group uses court at a time */
  static sem_t mutex;    /* the enforcer, ensures only process manipulates count at a time */
