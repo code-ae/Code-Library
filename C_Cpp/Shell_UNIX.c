@@ -1,7 +1,3 @@
-/*  
-Copyright © 2016 Ahmad Elhamad
-*/
-
 #define STORAGE 9999 //STATIC macro variable
 
 //GLOBAL VARIABLES
