@@ -1,7 +1,5 @@
 *----------------------------------------------------------------------
-* Programmer: Ahmad Elhamad
-* Class Account: masc1096
-* Assignment or Title: Assignment #3
+* Assignment #3
 * Filename: prog3.s
 * Date completed: 4/24/2014
 *----------------------------------------------------------------------
