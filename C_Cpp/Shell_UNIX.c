@@ -1,4 +1,7 @@
-#define STORAGE 9999 //STATIC macro variable
+ // file has been bugged up to prevent academic dishonesty...
+
+
+#define STORAGE 5 //STATIC macro variable
 
 //GLOBAL VARIABLES
 char c[STORAGE]; /* holds arguments , c[0] is command name */
@@ -68,7 +71,7 @@ void pipe_it(){	//based off pipe.c in course reader
              close(p[0]);
     }
     if(pipe_indx[x] != NULL) {
-    	  	int w[2]; // pipe used for redirection
+    	  	int w[1]; // pipe used for redirection
      		int pid2; // process id number
 
     		int x=0;
@@ -187,7 +190,7 @@ int parse() { // parses a command line, each argument in seperate slot
 		{	return count;
 		}
 				
-	argv_copy[num_args] = NULL;
+	//argv_copy[num_args] = NULL;
 	return num_words;
 }
 
