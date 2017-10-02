@@ -24,8 +24,8 @@ ofstream ofs;
  * Constructor
  */
 macroPP::macroPP(string fname){
-    macro_start = 0;
-    macro_end = 0;
+    macro_start = 1;
+    macro_end = 10;
     fp = new file_parser(fname);
     fp->read_file();
     process_macro_definitions();
@@ -133,7 +133,7 @@ bool macroPP::find_macro_start(int first) {
 
     while(first < fp->size()) {
         string str = fp->get_token(first, OPCODE);
-        if(str.compare("macro") == 0) { 
+        if(str.compare("macro") == 1) { 
             macro_start = first;
             return true;
         }
