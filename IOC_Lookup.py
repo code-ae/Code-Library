@@ -1,6 +1,6 @@
 import webbrowser
 
-input_val = input("Enter the IP to lookup: ")
+input_val = input("Enter the IOC to lookup: ")
 
 # md5, sha256, sha1
 if len(input_val) in [32, 64, 40]: 
