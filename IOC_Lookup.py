@@ -5,7 +5,7 @@ input_val = input("Enter the IOC to lookup: ")
 if len(input_val) in [32, 64, 40]: 
 	url = "https://www.virustotal.com/search/?query=" + input_val
 	webbrowser.open(url,new=2, autoraise=True)
-
+	
 # domain name
 elif "www." in input_val or "http" in input_val or ".com" in input_val:
 	url = "https://urlquery.net/search?q=" + input_val
