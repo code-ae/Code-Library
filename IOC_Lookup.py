@@ -1,5 +1,4 @@
 import webbrowser
-
 input_val = input("Enter the IOC to lookup: ")
 
 # md5, sha256, sha1
@@ -8,7 +7,7 @@ if len(input_val) in [32, 64, 40]:
 	webbrowser.open(url,new=2, autoraise=True)
 
 # domain name
-else if "www." in input_val or "http" in input_val or ".com" in input_val:
+elif "www." in input_val or "http" in input_val or ".com" in input_val:
 	url = "https://urlquery.net/search?q=" + input_val
 	webbrowser.open(url,new=2, autoraise=True)
 
@@ -29,7 +28,6 @@ else:
 	url = "https://community.riskiq.com/search/" + input_val
 	webbrowser.open(url,new=2, autoraise=True)
 
-	
-
-	
-	
+print("Reports launched!")
+sleep(2)
+exit()
