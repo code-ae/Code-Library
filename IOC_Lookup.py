@@ -7,7 +7,7 @@ if len(input_val) in [32, 64, 40]:
 	webbrowser.open(url,new=2, autoraise=True)
 	
 # domain name
-elif "www." in input_val or "http" in input_val or ".com" in input_val:
+elif "www." in input_val or "http" in input_val or ".com" in input_val or ".net" in input_val or ".org" in input_val or ".ru" in input_val or ".cn" in input_val:
 	url = "https://urlquery.net/search?q=" + input_val
 	webbrowser.open(url,new=2, autoraise=True)
 
