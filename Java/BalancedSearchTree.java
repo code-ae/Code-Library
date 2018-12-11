@@ -73,7 +73,6 @@ public class BalancedSearchTree<E> {
 /**
  * Node class definition, with data slot type E and 
  * pointers to a leftChild and rightChild
- * @author a
  *
  * @param <E>
  */
@@ -103,7 +102,6 @@ public class BalancedSearchTree<E> {
 	 * spot using BST rules. (Bigger on right, small on Left)
 	 * it then sets the pointers of th sorrounding Nodes accordingly
 	 * @param obj
-	 * @return
 	 */
 	public boolean add(E obj) {
 		if(root == null)
@@ -145,7 +143,6 @@ public class BalancedSearchTree<E> {
 	 * right child, one left child, or both.
 	 * If tree is empty, it will return false
 	 * @param obj
-	 * @return
 	 */
 	public boolean delete(E obj) {
 		if(currentSize == 0)
