@@ -1,4 +1,5 @@
 import webbrowser
+
 input_val = input("Enter the IOC to lookup: ")
 
 # md5, sha256, sha1
