@@ -2,6 +2,11 @@ import webbrowser
 
 input_val = input("Enter the IOC to lookup: ")
 
+if "port" in input_val:
+	input_val = input_val.split()
+	url = "https://www.speedguide.net/port.php?port=" + input_val[1]
+	webbrowser.open(url,new=2, autoraise=True)
+
 # md5, sha256, sha1
 if len(input_val) in [32, 64, 40]: 
 	url = "https://www.virustotal.com/search/?query=" + input_val
